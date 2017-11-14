@@ -1,0 +1,500 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+
+    font-family: 'Press Start 2P', cursive;
+
+    background-color: #1d1d1d;
+    animation: blinking 1s steps(11, end) 1s 1;
+}
+
+main {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+img,
+#cover {
+    position: absolute;
+
+    min-height: 100%;
+    min-width: 100%;
+}
+
+img {
+    opacity: 0.1;
+    left: 0;
+
+    animation: noise 1s steps(4, end) 1s infinite;
+
+}
+
+#cover {
+    background-color: #000000;
+    opacity: 0;
+    animation: attach 7.5s steps(1, end) 1s infinite;
+}
+
+/* Countdown Style */
+
+.counter {
+    position: relative;
+
+    top: 40%;
+    left: 50%;
+
+    overflow: hidden;
+    float: left;
+
+}
+
+.css-text {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    font-size: 2em;
+
+    color: #c3c3c3;
+    letter-spacing: 8px;
+
+    overflow: hidden;
+
+    animation: end1 4s steps(3, end) 14s 1;
+    opacity: 0;
+}
+
+h1 {
+    position: absolute;
+
+    display: inline-block;
+
+    width: 100%;
+    height: 100%;
+
+    padding-left: 10%;
+
+    opacity: 0;
+
+    animation: glitch 2.5s 14s infinite;
+}
+
+.counter,
+.css-text {
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+
+    transform: translate(-50%, -50%);
+    padding: 0;
+    margin: 0;
+
+}
+
+h1:nth-child(2) {
+    color: #67f3da;
+    animation: glitch2 2.5s 14s infinite;
+}
+
+h1:nth-child(3) {
+    color: #f16f6f;
+    animation: glitch3 2.5s 14s infinite;
+}
+
+h1 > span {
+    opacity: 0;
+    
+    animation: letter 1.4s steps(4, end) 14.3s infinite;
+}
+
+.counter > li {
+    display: inline-block;
+
+    width: 100%;
+    height: 100%;
+
+    color: #8d8d8d;
+    font-size: 12em;
+
+    list-style: none;
+
+    text-align: center;
+
+    transform: translate(0%, -996%) rotateY(0deg);
+    background-color: transparent;
+    text-decoration: none;
+
+}
+
+.counter > li:last-child {
+    opacity: 0;
+    color: #404040;
+}
+
+/* Countdown style - END - */
+
+/* Countdown Animation 1st step */
+
+main {
+    animation: blinking 2.4s steps(11, end) 1s 1;
+}
+
+.counter {
+    animation: intro 0.6s steps(1, end) 1s 2;
+}
+
+
+.counter > li:nth-last-child(1) {
+    animation: intro 0.6s steps(1, end) 2.2s 3;
+}
+
+.counter > li {
+    animation: countdown 11.1s steps(11, end) 3.1s 1;
+}
+
+
+@keyframes intro {
+    0% {
+        opacity: 0, 02;
+        font-size: 14em;
+    }
+
+    5% {
+        opacity: 0.7;
+        width: 108%;
+        font-size: 13em;
+        color: #771010;
+    }
+
+    10% {
+        opacity: 1;
+        width: 97%;
+        font-size: 18em;
+        color: #e3e3e3;
+    }
+
+    20% {
+        width: 111%;
+        font-size: 14em;
+        transform: translate(0%, -1000%) rotateY(90deg);
+        background-color: #ac1616;
+    }
+
+    40% {
+
+        opacity: 0.6;
+        font-size: 9em;
+        transform: translate(0%, -1000%) rotateY(0deg);
+        background-color: transparent;
+        width: 100%;
+    }
+
+    60% {
+        opacity: 1;
+        width: 97%;
+        font-size: 18em;
+        color: #e3e3e3;
+        text-decoration: line-through;
+
+    }
+
+    80% {
+        width: 111%;
+        font-size: 14em;
+        transform: translate(0%, -1000%) rotateY(90deg);
+        background-color: #ac1616;
+        color: #54c6b1;
+
+    }
+
+    85% {
+
+        width: 100%;
+        transform: translate(0%, -1000%) rotateY(0deg);
+        background-color: transparent;
+        text-decoration: none;
+        font-size: 14em;
+    }
+
+    90% {
+        transform: translate(0%, -1050%);
+    }
+
+    93% {
+        transform: translate(0%, -980%);
+        color: #e3e3e3;
+    }
+
+    97% {
+        transform: translate(0%, -1030%);
+    }
+
+    99% {
+        transform: translate(0%, -990%);
+    }
+    100% {
+        transform: translate(0%, -1001%);
+        opacity: 0;
+    }
+}
+
+@keyframes countdown {
+    100% {
+        transform: translate(0%, 100%);
+        color: #950000;
+    }
+}
+
+@keyframes blinking {
+    100% {
+        background-color: #3c3c3c;
+    }
+}
+
+@keyframes noise {
+    0% {
+        left: -2%;
+        opacity: 0.2;
+        top: 2%;
+    }
+
+    100% {
+        left: -10%;
+        opacity: 0.1;
+    }
+}
+
+
+/* ANIMATION INTRO - END - */
+
+/* ANIMATION CSS-TEXT GLITCH */
+
+@keyframes glitch {
+    0%,
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes glitch1 {
+    0% {
+        transform: none;
+        opacity: 1;
+    }
+    7% {
+        transform: skew(-0.5deg, -0.9deg);
+        opacity: 0.75;
+    }
+    10% {
+        transform: none;
+        opacity: 1;
+    }
+    27% {
+        transform: none;
+        opacity: 1;
+    }
+    30% {
+        transform: skew(0.8deg, -0.1deg);
+        opacity: 0.75;
+    }
+    35% {
+        transform: none;
+        opacity: 1;
+    }
+    52% {
+        transform: none;
+        opacity: 1;
+    }
+    55% {
+        transform: skew(-1deg, 0.2deg);
+        opacity: 0.75;
+    }
+    50% {
+        transform: none;
+        opacity: 1;
+    }
+    72% {
+        transform: none;
+        opacity: 1;
+    }
+    75% {
+        transform: skew(0.4deg, 1deg);
+        opacity: 0.75;
+    }
+    80% {
+        transform: none;
+        opacity: 1;
+    }
+    100% {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@keyframes glitch2 {
+    0% {
+        transform: none;
+        opacity: 0.25;
+    }
+    7% {
+        transform: translate(-2px, -3px);
+        opacity: 0.5;
+    }
+    10% {
+        transform: none;
+        opacity: 0.25;
+    }
+    27% {
+        transform: none;
+        opacity: 0.25;
+    }
+    30% {
+        transform: translate(-5px, -2px);
+        opacity: 0.5;
+    }
+    35% {
+        transform: none;
+        opacity: 0.25;
+    }
+    52% {
+        transform: none;
+        opacity: 0.25;
+    }
+    55% {
+        transform: translate(-5px, -1px);
+        opacity: 0.5;
+    }
+    50% {
+        transform: none;
+        opacity: 0.25;
+    }
+    72% {
+        transform: none;
+        opacity: 0.25;
+    }
+    75% {
+        transform: translate(-2px, -6px);
+        opacity: 0.5;
+    }
+    80% {
+        transform: none;
+        opacity: 0.25;
+    }
+    100% {
+        transform: none;
+        opacity: 0.25;
+    }
+}
+
+@keyframes glitch3 {
+    0% {
+        transform: none;
+        opacity: 0.25;
+    }
+    7% {
+        transform: translate(2px, 3px);
+        opacity: 0.5;
+    }
+    10% {
+        transform: none;
+        opacity: 0.25;
+    }
+    27% {
+        transform: none;
+        opacity: 0.25;
+    }
+    30% {
+        transform: translate(5px, 2px);
+        opacity: 0.5;
+    }
+    35% {
+        transform: none;
+        opacity: 0.25;
+    }
+    52% {
+        transform: none;
+        opacity: 0.25;
+    }
+    55% {
+        transform: translate(5px, 1px);
+        opacity: 0.5;
+    }
+    50% {
+        transform: none;
+        opacity: 0.25;
+    }
+    72% {
+        transform: none;
+        opacity: 0.25;
+    }
+    75% {
+        transform: translate(2px, 6px);
+        opacity: 0.5;
+    }
+    80% {
+        transform: none;
+        opacity: 0.25;
+    }
+    100% {
+        transform: none;
+        opacity: 0.25;
+    }
+}
+
+@keyframes attach {
+    0% {
+        opacity: 0;
+    }
+    96% {
+        opacity: 1;
+        transform: translateX(-20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(20%);
+    }
+}
+
+@keyframes end1 {
+    0% {
+        opacity: 1;
+        width: 100%;
+    }
+
+    100% {
+        background-color: #4b4b4b;
+        width: 0%;
+        height: 500px;
+        opacity: 0;
+    }
+}
+
+@keyframes letter {
+    0% {
+        opacity: 1;
+        color: beige;
+        transform: translateY(5%);
+    }
+    
+    50% {
+        color: #887272;
+        transform: translateY(-5%);
+        opacity: 0.6;
+    }
+    
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Style Audio */
+
+#bgnoise source {
+    display: none;
+}
